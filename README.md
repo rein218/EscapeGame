@@ -1,3 +1,2 @@
-Penis
-:()
-as
+Pen
+:(
