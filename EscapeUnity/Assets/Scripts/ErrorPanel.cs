@@ -1,16 +1,26 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using URPGlitch;
 
 public class ErrorPanel : MonoBehaviour
 {
-    [SerializeField] AudioClip[] errorSound;
+    [SerializeField] AudioClip[] soundError;
     [SerializeField] Volume volumeGlitch;
+    [SerializeField] TextMeshProUGUI textError;
 
-    void Start()
+
+    public void ActivateError(string text)
     {
-        
+        this.gameObject.SetActive(true);
+        textError.text = text;
+    }
+
+    public void CloseError()
+    {
+        this.gameObject.SetActive(false);
+        Debug.Log("close");
     }
 
     IEnumerator TemporarilyEnableGlitch(float duration)
@@ -43,9 +53,9 @@ public class ErrorPanel : MonoBehaviour
         }
     }
 
-    public void PlayErrorSound()
+    public void PlaysoundError()
     {
-        SoundManager.Instance.RandomSoundEffect(errorSound);
+        SoundManager.Instance.RandomSoundEffect(soundError);
     }
 
     public void PlayGlitchEffect(float time)
