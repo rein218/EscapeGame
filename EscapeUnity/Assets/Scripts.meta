@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 08aa318803dbd534e92bcd341db2c37a
+=======
+guid: c4b359cdf80ce792fb3c22be02e08d96
+>>>>>>> 5c97069 (Resolved merge conflicts)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

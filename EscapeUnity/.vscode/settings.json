@@ -66,5 +66,12 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "EscapeUnity.sln"
+    "dotnet.defaultSolution": "EscapeUnity.sln",
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "scm.inputFontFamily": "",
+    "debug.console.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "editor.inlineSuggest.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "chat.editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "chat.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'monospace', monospace"
 }
