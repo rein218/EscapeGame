@@ -696,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: -150}
+  m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 191.83, y: 70.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512451156
@@ -1265,6 +1265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   sfxSource: {fileID: 1212596950}
   MusicSource: {fileID: 583985168}
+  SfxVolume: 1
+  MusicVolume: 1
   LowPitchRange: 0.95
   HighPitchRange: 1.05
 --- !u!4 &707317506
@@ -1856,8 +1858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -502.68}
-  m_SizeDelta: {x: 650, y: 450.64}
+  m_AnchoredPosition: {x: 0, y: -220}
+  m_SizeDelta: {x: 650, y: 199.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367496307
 MonoBehaviour:
