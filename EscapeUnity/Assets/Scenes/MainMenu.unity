@@ -1562,10 +1562,14 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 325, y: -80}
 =======
   m_AnchoredPosition: {x: 325, y: -200}
 >>>>>>> fc0c347 (Menu redesign)
+=======
+  m_AnchoredPosition: {x: 325, y: -80}
+>>>>>>> 82cd5c1 (A lot of free sound assets)
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758254124
@@ -2596,10 +2600,14 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 205, y: -80}
 =======
   m_AnchoredPosition: {x: 205, y: -200}
 >>>>>>> fc0c347 (Menu redesign)
+=======
+  m_AnchoredPosition: {x: 205, y: -80}
+>>>>>>> 82cd5c1 (A lot of free sound assets)
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497040512
@@ -2733,10 +2741,14 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 85, y: -80}
 =======
   m_AnchoredPosition: {x: 85, y: -200}
 >>>>>>> fc0c347 (Menu redesign)
+=======
+  m_AnchoredPosition: {x: 85, y: -80}
+>>>>>>> 82cd5c1 (A lot of free sound assets)
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527248519
