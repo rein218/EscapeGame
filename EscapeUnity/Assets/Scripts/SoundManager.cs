@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
 	public AudioSource sfxSource;
 	public AudioSource MusicSource;
+	public AudioSource AmbientSource;
 
 	[Range(0f, 1f)] public float SfxVolume = 1f;
 	[Range(0f, 1f)] public float MusicVolume = 1f;
@@ -87,11 +88,30 @@ public class SoundManager : MonoBehaviour
 	public void PlayMusic(AudioClip clip, bool loop = true)
 	{
 		if (MusicSource == null || clip == null) return;
-		MusicSource.volume = Mathf.Clamp01(MusicVolume);
-		MusicSource.clip = clip;
-		MusicSource.loop = loop;
+		if (MusicSource.clip == null)
+		{
+			MusicSource.volume = Mathf.Clamp01(MusicVolume);
+			MusicSource.clip = clip;
+			MusicSource.loop = loop;
+		}
 		MusicSource.Play();
 	}
+	public void UnmuteMusic() => MusicSource.mute = false;
+	public void MuteMusic() => MusicSource.mute = true;
+
+	public void PlayAmbient(AudioClip clip, bool loop = true)
+	{
+		if (AmbientSource == null || clip == null) return;
+		if (AmbientSource.clip == null)
+		{
+			AmbientSource.volume = Mathf.Clamp01(MusicVolume);
+			AmbientSource.clip = clip;
+			AmbientSource.loop = loop;
+		}
+		AmbientSource.Play();
+	}
+	public void UnmuteAmbient() => AmbientSource.mute = false;
+	public void MuteAmbient() => AmbientSource.mute = true;
 
 	// Play a random clip from an array, and randomize the pitch slightly.
 	public void RandomSoundEffect(params AudioClip[] clips)

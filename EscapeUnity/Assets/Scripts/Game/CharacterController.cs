@@ -27,6 +27,8 @@ public class CharacterController : AbstractPausable
     private bool isJumping = false;
 
     private Vector2 startPosition;
+    [Header("Fade Settings")]
+    [SerializeField] private float _fadeSpeed = 0.5f;
     [SerializeField] private GameObject fadeMask;
 
     [Header("unlocks")]
@@ -39,7 +41,7 @@ public class CharacterController : AbstractPausable
         _basePos = transform.position;
 
         startPosition = transform.position;
-        FadeOut(2f);
+        FadeOut();
     }
 
     void Update()
@@ -150,14 +152,14 @@ public class CharacterController : AbstractPausable
         transform.position = startPosition;
     }
 
-    public void FadeOut(float sec)
+    public void FadeOut()
     {
         fadeMask.transform.localScale = new Vector3(0, 0, 0);
-        fadeMask.transform.DOScale(new Vector3(10f, 10f, 1f), sec);
+        fadeMask.transform.DOScale(new Vector3(10f, 10f, 1f), _fadeSpeed);
     }
 
-    public void FadeIn(float sec)
+    public void FadeIn()
     {
-        fadeMask.transform.DOScale(new Vector3(0f, 0f, 1f), sec);
+        fadeMask.transform.DOScale(new Vector3(0f, 0f, 1f), _fadeSpeed);
     }
 }

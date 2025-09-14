@@ -10,14 +10,16 @@ public class Exit : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<CharacterController>(out var player))
         {
-            StartCoroutine(ChangeSceneAfterDelay(2f, collision.GetComponent<CharacterController>()));
+            StartCoroutine(ChangeSceneAfterDelay(2f, player));
         }
     }
 
     private IEnumerator ChangeSceneAfterDelay(float sec, CharacterController character)
     {
-        character.FadeIn(sec);
+        character.FadeIn();
         yield return new WaitForSeconds(sec);
+        PauseManager.Instance.Resume();
+        yield return null;
         SceneManager.LoadScene(levelName);
     }
 }
