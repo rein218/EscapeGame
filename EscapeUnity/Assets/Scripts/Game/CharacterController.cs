@@ -32,11 +32,9 @@ public class CharacterController : AbstractPausable
     {
         base.Start();
         initialJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics2D.gravity.y) * _jumpHeight);
-<<<<<<< HEAD
         _basePos = transform.position;
-=======
+
         startPosition = transform.position;
->>>>>>> 6c063a2 (Level2 and prefabs)
     }
 
     void Update()
@@ -132,7 +130,6 @@ public class CharacterController : AbstractPausable
         }
     }
 
-<<<<<<< HEAD
     public void ReturnToStart()
     {
         transform.position = _basePos;
@@ -141,11 +138,10 @@ public class CharacterController : AbstractPausable
     public void PauseInstance()
     {
         PauseManager.Instance.Pause();
-=======
+    }
     public void Death()
     {
         Debug.Log("wtf");
         transform.position = startPosition;
->>>>>>> 6c063a2 (Level2 and prefabs)
     }
 }
