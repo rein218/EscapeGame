@@ -22,6 +22,8 @@ public class CharacterController : AbstractPausable
     private float jumpTimer = 0f;
     private bool isJumping = false;
 
+    private Vector2 startPosition;
+
     [Header("unlocks")]
     [SerializeField] private bool _isJumpUnlocked = false;
 
@@ -36,6 +38,7 @@ public class CharacterController : AbstractPausable
     {
         base.Start();
         initialJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics2D.gravity.y) * _jumpHeight);
+        startPosition = transform.position;
     }
 
     void Update()
@@ -129,5 +132,11 @@ public class CharacterController : AbstractPausable
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
+    }
+
+    public void Death()
+    {
+        Debug.Log("wtf");
+        transform.position = startPosition;
     }
 }
