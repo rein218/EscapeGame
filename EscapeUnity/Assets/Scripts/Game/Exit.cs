@@ -1,7 +1,6 @@
-using Unity.Android.Gradle.Manifest;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Exit : MonoBehaviour
 {
@@ -11,12 +10,14 @@ public class Exit : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<CharacterController>(out var player))
         {
-            ChangeScene();
+            StartCoroutine(ChangeSceneAfterDelay(2f, collision.GetComponent<CharacterController>()));
         }
-
     }
-    public void ChangeScene()
+
+    private IEnumerator ChangeSceneAfterDelay(float sec, CharacterController character)
     {
+        character.FadeIn(sec);
+        yield return new WaitForSeconds(sec);
         SceneManager.LoadScene(levelName);
     }
 }
