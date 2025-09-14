@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4768717318264989281, guid: d3a4f479201e3384881700fea2c311a4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 8.44
       objectReference: {fileID: 0}
     - target: {fileID: 4768717318264989281, guid: d3a4f479201e3384881700fea2c311a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000037fcd3a8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -279,7 +279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4768717318264989281, guid: d3a4f479201e3384881700fea2c311a4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 8.44
       objectReference: {fileID: 0}
     - target: {fileID: 4768717318264989281, guid: d3a4f479201e3384881700fea2c311a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,10 +341,6 @@ PrefabInstance:
     - target: {fileID: 240465885699272241, guid: 96781fc95c136af489690ffa8f809696, type: 3}
       propertyPath: m_Name
       value: Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 240465885699272241, guid: 96781fc95c136af489690ffa8f809696, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2624270709108342435, guid: 96781fc95c136af489690ffa8f809696, type: 3}
       propertyPath: m_LocalPosition.x

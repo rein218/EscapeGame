@@ -1,4 +1,7 @@
 using UnityEngine;
+using DG.Tweening;
+using System.Collections;
+
 
 public class CharacterController : AbstractPausable
 {
@@ -24,6 +27,7 @@ public class CharacterController : AbstractPausable
     private bool isJumping = false;
 
     private Vector2 startPosition;
+    [SerializeField] private GameObject fadeMask;
 
     [Header("unlocks")]
     [SerializeField] private bool _isJumpUnlocked = false;
@@ -35,6 +39,7 @@ public class CharacterController : AbstractPausable
         _basePos = transform.position;
 
         startPosition = transform.position;
+        FadeOut(2f);
     }
 
     void Update()
@@ -143,5 +148,16 @@ public class CharacterController : AbstractPausable
     {
         Debug.Log("wtf");
         transform.position = startPosition;
+    }
+
+    public void FadeOut(float sec)
+    {
+        fadeMask.transform.localScale = new Vector3(0, 0, 0);
+        fadeMask.transform.DOScale(new Vector3(10f, 10f, 1f), sec);
+    }
+
+    public void FadeIn(float sec)
+    {
+        fadeMask.transform.DOScale(new Vector3(0f, 0f, 1f), sec);
     }
 }
