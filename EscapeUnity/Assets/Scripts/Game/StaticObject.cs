@@ -10,10 +10,10 @@ public class StaticObject : AbstractPausable
 
     public override void Pause()
     {
-        _sprite.color = new Color(0,0,0);
+       _sprite.color = new Color(0.33f, 0.45f, 0.55f);
     }
     public override void Resume()
     {
-        _sprite.color = new Color(255,255,255);
+        _sprite.color = new Color(1,1,1);
     }
 }

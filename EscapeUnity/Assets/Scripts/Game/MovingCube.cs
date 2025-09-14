@@ -18,20 +18,20 @@ public class MovingCube : AbstractPausable
         base.Pause();
         if (_pausable)
         {
-            _sprite.color = new Color(0, 0, 0);
+            _sprite.color = new Color(0.33f, 0.45f, 0.55f);
             savedVelosity = _rb.linearVelocity;
             _rb.bodyType = RigidbodyType2D.Static;
         }
         else
         {
-            _sprite.color = new Color(255, 255, 255);
+            _sprite.color = new Color(0.33f, 0.45f, 0.55f);
         }
         
     }
     public override void Resume()
     {
         base.Resume();
-        _sprite.color = new Color(255, 255, 255);
+        _sprite.color = new Color(1,1,1,1);
         _rb.bodyType = RigidbodyType2D.Dynamic;
         _rb.linearVelocity = savedVelosity;
     }
