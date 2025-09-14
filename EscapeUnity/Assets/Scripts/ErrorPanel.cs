@@ -6,21 +6,56 @@ using URPGlitch;
 
 public class ErrorPanel : MonoBehaviour
 {
-    [SerializeField] AudioClip[] soundError;
-    [SerializeField] Volume volumeGlitch;
     [SerializeField] TextMeshProUGUI textError;
+    [SerializeField] string[] dialogs;
+    [SerializeField] bool isDialog = false;
+    [SerializeField] float typingSpeed = 0.1f;
+    [SerializeField] int cycleDialogsEnd = 2;
+    private int cycleDialogCounter = -1;
+
+    [SerializeField] AudioClip[] soundError, soundTyping;
+    [SerializeField] Volume volumeGlitch;
+    private Coroutine typingCoroutine;
 
 
-    public void ActivateError(string text)
+    public void ActivateError()
     {
         this.gameObject.SetActive(true);
-        textError.text = text;
+
+        if (dialogs.Length - cycleDialogsEnd < 0)
+        {
+            cycleDialogsEnd = 0;
+            Debug.Log("dialogs.Length - cycleDialogsEnd < 0");
+        }
+
+        if (isDialog) 
+        {
+            ChangeDialog();
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+            }
+            typingCoroutine = StartCoroutine(TypingText(dialogs[cycleDialogCounter]));
+        }
+        else 
+        {
+            textError.text = dialogs[0];
+        }
+    }
+
+    void ChangeDialog()
+    {
+        if (cycleDialogCounter < dialogs.Length - 1) cycleDialogCounter++;
+        else cycleDialogCounter = dialogs.Length - cycleDialogsEnd;
+        Debug.Log(cycleDialogCounter);
     }
 
     public void CloseError()
     {
-        this.gameObject.SetActive(false);
-        Debug.Log("close");
+        if (typingCoroutine == null)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator TemporarilyEnableGlitch(float duration)
@@ -61,5 +96,19 @@ public class ErrorPanel : MonoBehaviour
     public void PlayGlitchEffect(float time)
     {
         StartCoroutine(TemporarilyEnableGlitch(time));
+    }
+
+    IEnumerator TypingText(string text)
+    {
+        textError.text = string.Empty;
+        
+        foreach (char c in text)
+        {
+            SoundManager.Instance.RandomSoundEffect(soundTyping);
+            textError.text += c;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        
+        typingCoroutine = null; // Reset coroutine reference when done
     }
 }
