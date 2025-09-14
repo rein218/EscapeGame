@@ -88,6 +88,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  _fadeSpeed: 0.5
   fadeMask: {fileID: 1860764820717161708}
   _isJumpUnlocked: 1
 --- !u!61 &2247288013598138244
@@ -162,8 +163,8 @@ RectTransform:
   m_GameObject: {fileID: 1860764820717161708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 20, y: 20, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2624270709108342435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -155,7 +155,7 @@ public class CharacterController : AbstractPausable
     public void FadeOut()
     {
         fadeMask.transform.localScale = new Vector3(0, 0, 0);
-        fadeMask.transform.DOScale(new Vector3(10f, 10f, 1f), _fadeSpeed);
+        fadeMask.transform.DOScale(new Vector3(20f, 20f, 1f), _fadeSpeed);
     }
 
     public void FadeIn()
