@@ -29,26 +29,20 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_isPaused == false)
-            {
-                _isPaused = true;
-                Pause();
-            }
-            else
-            {
-                _isPaused = false;
-                Resume();
-            }
+            if (_isPaused == false)  Pause();
+            else Resume();
         }
     }
 
-    private void Pause()
+    public void Pause()
     {
         OnPause?.Invoke();
+        _isPaused = true;
     }
-    
-    private void Resume()
+
+    public void Resume()
     {
         OnResume?.Invoke();
+        _isPaused = false;
     }
 }

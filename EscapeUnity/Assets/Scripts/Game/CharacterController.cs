@@ -4,16 +4,17 @@ public class CharacterController : AbstractPausable
 {
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private bool _isTryingToMove;
+    [SerializeField] private Vector3 _basePos;
     [Header("Horizontal Movement")]
     [SerializeField] private float _movementSpeed;
     private bool moveLeft = false;
     private bool moveRight = false;
-    
+
     [Header("Jump Settings")]
 
-    [SerializeField] private float _rotationForse = 500f;  
-    [SerializeField] private float _jumpHeight = 5f;  
-    [SerializeField] private float _jumpDuration = 0.5f; 
+    [SerializeField] private float _rotationForse = 500f;
+    [SerializeField] private float _jumpHeight = 5f;
+    [SerializeField] private float _jumpDuration = 0.5f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float checkRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
@@ -25,23 +26,17 @@ public class CharacterController : AbstractPausable
     [Header("unlocks")]
     [SerializeField] private bool _isJumpUnlocked = false;
 
-
-    
-    
-    
-
- 
-
     public override void Start()
     {
         base.Start();
         initialJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics2D.gravity.y) * _jumpHeight);
+        _basePos = transform.position;
     }
 
     void Update()
     {
         //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-        
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             moveLeft = true;
@@ -129,5 +124,15 @@ public class CharacterController : AbstractPausable
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         }
+    }
+
+    public void ReturnToStart()
+    {
+        transform.position = _basePos;
+    }
+
+    public void PauseInstance()
+    {
+        PauseManager.Instance.Pause();
     }
 }
