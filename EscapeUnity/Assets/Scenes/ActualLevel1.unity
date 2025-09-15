@@ -442,8 +442,8 @@ Transform:
   m_GameObject: {fileID: 281349665}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.97, y: 0.05, z: 0}
-  m_LocalScale: {x: 1.5315852, y: 2.0960517, z: 1}
+  m_LocalPosition: {x: -8.1, y: 1.11, z: 0}
+  m_LocalScale: {x: 1.5315852, y: 10.805776, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -554,7 +554,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10.46
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -908,6 +908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   sfxSource: {fileID: 1212596950}
   MusicSource: {fileID: 583985168}
+  AmbientSource: {fileID: 0}
   SfxVolume: 1
   MusicVolume: 1
   LowPitchRange: 0.95
@@ -1309,8 +1310,8 @@ Transform:
   m_GameObject: {fileID: 1298656179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.48, y: -2.05, z: 0}
-  m_LocalScale: {x: 8.471157, y: 2.0960517, z: 1}
+  m_LocalPosition: {x: -4.48, y: -3.89, z: 0}
+  m_LocalScale: {x: 8.471157, y: 1.1283046, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1334,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1317387566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1395,15 +1396,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   _rb: {fileID: 1317387568}
   _isTryingToMove: 0
+  _basePos: {x: 0, y: 0, z: 0}
   _movementSpeed: 5
-  _rotationForse: 700
-  _jumpHeight: 0.5
-  _jumpDuration: 0.3
   groundCheck: {fileID: 786335269}
-  checkRadius: 0.2
-  groundLayer:
+  jumpspeed: 0
+  whatisground:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
+  groundcheckradius: 0.2
+  isGrounded: 0
+  coyotetime: 0.2
+  coyotecounter: 0
+  jumpbufferlength: 0.1
+  _fadeSpeed: 0.5
+  fadeMask: {fileID: 0}
   _isJumpUnlocked: 1
 --- !u!50 &1317387568
 Rigidbody2D:
@@ -1839,7 +1845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -597.99994, y: 337}
+  m_AnchoredPosition: {x: -598, y: 337}
   m_SizeDelta: {x: 1196, y: 674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1555578406
@@ -2302,7 +2308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _pauseIcon: {fileID: 1902678382}
   _resumeIcon: {fileID: 103007907}
-  _blackOut: {fileID: 1530494082}
 --- !u!1001 &1558649928294323319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2372,6 +2377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 240465885699272241, guid: 96781fc95c136af489690ffa8f809696, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2624270709108342435, guid: 96781fc95c136af489690ffa8f809696, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.25
@@ -2411,6 +2420,18 @@ PrefabInstance:
     - target: {fileID: 2624270709108342435, guid: 96781fc95c136af489690ffa8f809696, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880392488869790476, guid: 96781fc95c136af489690ffa8f809696, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880392488869790476, guid: 96781fc95c136af489690ffa8f809696, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.06768101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470554616731037721, guid: 96781fc95c136af489690ffa8f809696, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

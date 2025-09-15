@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2471587576703868282}
   - component: {fileID: 6769038681920580095}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 5746103961999857948}
   - component: {fileID: 1135710334547196462}
   - component: {fileID: 1150601411794028216}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: ErrorTextTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7728825544734137177}
   - component: {fileID: 2328341649014189507}
   - component: {fileID: 3524212238185372684}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 7669343975346428533}
   - component: {fileID: 8633071946190046581}
   - component: {fileID: 7827999051535831482}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 3541341170548957586}
   - component: {fileID: 6080954349471494886}
   - component: {fileID: 3196348481400096746}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 4089825612143273984}
   - component: {fileID: 8479393880875018369}
   - component: {fileID: 2525970250783160518}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: ObjectError
   m_TagString: Untagged
   m_Icon: {fileID: 0}

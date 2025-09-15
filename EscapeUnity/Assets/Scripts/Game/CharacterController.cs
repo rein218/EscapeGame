@@ -15,18 +15,22 @@ public class CharacterController : AbstractPausable
 
     [Header("Jump Settings")]
 
-    [SerializeField] private float _rotationForse = 500f;
-    [SerializeField] private float _jumpHeight = 5f;
-    [SerializeField] private float _jumpDuration = 0.5f;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float checkRadius = 0.2f;
-    [SerializeField] private LayerMask groundLayer;
-    private bool isGrounded;
-    private float initialJumpVelocity;
-    private float jumpTimer = 0f;
-    private bool isJumping = false;
+    [SerializeField] private float jumpspeed; 
+    [SerializeField] private LayerMask whatisground; 
+    [SerializeField] private float groundcheckradius = 0.2f;
+    [SerializeField] private bool isGrounded;
 
     private Vector2 startPosition;
+
+    [Header("Coyote Time")]
+    public float coyotetime = .2f; 
+    public float coyotecounter; 
+
+    [Header("Minimum Distance of Jump Detection")]
+    public float jumpbufferlength = .1f; 
+    private float jumpbuffercount; 
+
     [Header("Fade Settings")]
     [SerializeField] private float _fadeSpeed = 0.5f;
     [SerializeField] private GameObject fadeMask;
@@ -37,7 +41,6 @@ public class CharacterController : AbstractPausable
     public override void Start()
     {
         base.Start();
-        initialJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics2D.gravity.y) * _jumpHeight);
         _basePos = transform.position;
 
         startPosition = transform.position;
@@ -46,7 +49,7 @@ public class CharacterController : AbstractPausable
 
     void Update()
     {
-        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundcheckradius, whatisground); 
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -68,35 +71,38 @@ public class CharacterController : AbstractPausable
         {
             moveRight = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && _isJumpUnlocked)
+        if (!_isJumpUnlocked) return;
+  
+        if (jumpbuffercount >= 0f && coyotecounter > 0f)
         {
-            isJumping = true;
-            jumpTimer = 0f;
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, initialJumpVelocity);
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpspeed);
+            jumpbuffercount = 0f;
+        }
+        
+        if (isGrounded)
+        {
+            coyotecounter = coyotetime;
+        }
+        else
+        {
+            coyotecounter -= Time.deltaTime;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpbuffercount = jumpbufferlength;
+        }
+        else
+        {
+            jumpbuffercount -= Time.deltaTime;
         }
 
-        // Если прыжок активен и клавиша все еще нажата
-        if (isJumping && Input.GetKey(KeyCode.Space))
-        {
-            jumpTimer += Time.deltaTime;
+        
 
-            // Если время прыжка истекло, прекращаем прыжок
-            if (jumpTimer >= _jumpDuration)
-            {
-                isJumping = false;
-            }
-        }
-
-        // Если клавиша прыжка отпущена, прекращаем прыжок
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && _rb.linearVelocity.y > 0)
         {
-            isJumping = false;
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _rb.linearVelocity.y * .5f); 
         }
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        isGrounded = true;
     }
 
     void FixedUpdate()
@@ -113,27 +119,15 @@ public class CharacterController : AbstractPausable
         {
             _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
         }
-        if (isJumping)
-        {
-            // Рассчитываем силу, которую нужно приложить для поддержания прыжка
-            // Сила уменьшается по мере приближения к концу прыжка
-            float jumpProgress = jumpTimer / _jumpDuration;
-            float jumpForceMultiplier = 1f - jumpProgress;
-
-            // Применяем дополнительную силу для поддержания прыжка
-            _rb.AddForce(Vector2.up * jumpForceMultiplier * initialJumpVelocity * 0.1f, ForceMode2D.Impulse);
-
-
-            _rb.MoveRotation(_rb.rotation + _rotationForse * Time.fixedDeltaTime);
-        }
     }
+
     // Визуализация области проверки земли в редакторе
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+            Gizmos.DrawWireSphere(groundCheck.position, groundcheckradius);
         }
     }
 
