@@ -70,7 +70,7 @@ public class MovingPlatform : AbstractPausable
     {
         if (collision.gameObject.TryGetComponent<CharacterController>(out var player))
         {
-           collision.transform.SetParent(transform);
+          //collision.transform.SetParent(transform);
             
         }
     }

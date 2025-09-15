@@ -48,6 +48,8 @@ public class SoundManager : MonoBehaviour
 			sfxSource.volume = Mathf.Clamp01(SfxVolume);
 		if (MusicSource != null)
 			MusicSource.volume = Mathf.Clamp01(MusicVolume);
+		if (AmbientSource != null)
+			AmbientSource.volume = Mathf.Clamp01(MusicVolume);
 	}
 
 	// Save current volume settings to PlayerPrefs
@@ -71,6 +73,7 @@ public class SoundManager : MonoBehaviour
 	{
 		MusicVolume = Mathf.Clamp01(volume);
 		if (MusicSource != null) MusicSource.volume = MusicVolume;
+		if (AmbientSource != null) AmbientSource.volume = MusicVolume;
 		SaveVolumes();
 	}
 

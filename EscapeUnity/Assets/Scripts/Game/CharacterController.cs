@@ -69,7 +69,7 @@ public class CharacterController : AbstractPausable
             moveRight = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && _isJumpUnlocked)
         {
             isJumping = true;
             jumpTimer = 0f;
@@ -77,7 +77,7 @@ public class CharacterController : AbstractPausable
         }
 
         // Если прыжок активен и клавиша все еще нажата
-        if (isJumping && Input.GetKey(KeyCode.Space) && _isJumpUnlocked)
+        if (isJumping && Input.GetKey(KeyCode.Space))
         {
             jumpTimer += Time.deltaTime;
 
@@ -148,7 +148,6 @@ public class CharacterController : AbstractPausable
     }
     public void Death()
     {
-        Debug.Log("wtf");
         transform.position = startPosition;
     }
 
@@ -161,5 +160,10 @@ public class CharacterController : AbstractPausable
     public void FadeIn()
     {
         fadeMask.transform.DOScale(new Vector3(0f, 0f, 1f), _fadeSpeed);
+    }
+    
+      public void EnableJump()
+    {
+        _isJumpUnlocked = true;
     }
 }

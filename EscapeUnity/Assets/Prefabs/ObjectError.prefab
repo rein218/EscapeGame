@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2471587576703868282}
   - component: {fileID: 6769038681920580095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 5746103961999857948}
   - component: {fileID: 1135710334547196462}
   - component: {fileID: 1150601411794028216}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ErrorTextTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,8 +83,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.932}
-  m_SizeDelta: {x: 144.0277, y: 64.87}
+  m_AnchoredPosition: {x: 0, y: -1.113}
+  m_SizeDelta: {x: 144.0277, y: 61.256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1135710334547196462
 CanvasRenderer:
@@ -116,8 +116,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sample text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 43654f307c8d9074286aee9104216963, type: 2}
+  m_sharedMaterial: {fileID: 8025752315914826077, guid: 43654f307c8d9074286aee9104216963, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -141,15 +141,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 16.89
+  m_fontSizeBase: 16.89
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7728825544734137177}
   - component: {fileID: 2328341649014189507}
   - component: {fileID: 3524212238185372684}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 7669343975346428533}
   - component: {fileID: 8633071946190046581}
   - component: {fileID: 7827999051535831482}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 3541341170548957586}
   - component: {fileID: 6080954349471494886}
   - component: {fileID: 3196348481400096746}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 4089825612143273984}
   - component: {fileID: 8479393880875018369}
   - component: {fileID: 2525970250783160518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObjectError
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 7546092287543836960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -1.91, z: 0}
+  m_LocalPosition: {x: 0.14, y: -1.93, z: 0}
   m_LocalScale: {x: 5.2084494, y: 3.0388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -578,11 +578,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65c384154ce9d6bd8cc4445d9118079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ErrorPanel
+  textError: {fileID: 1150601411794028216}
+  dialogs: []
+  isDialog: 0
+  typingSpeed: 0.1
+  cycleDialogsEnd: 2
   soundError:
   - {fileID: 8300000, guid: ea6fd787f2d017db59de3e3bb9e70984, type: 3}
   - {fileID: 8300000, guid: 1be84754ce8c7f653b0f3e6f6c53e071, type: 3}
+  soundTyping: []
   volumeGlitch: {fileID: 6769038681920580095}
-  textError: {fileID: 1150601411794028216}
 --- !u!61 &2525970250783160518
 BoxCollider2D:
   m_ObjectHideFlags: 0
