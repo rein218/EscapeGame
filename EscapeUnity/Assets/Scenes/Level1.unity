@@ -718,6 +718,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: volumeGlitch
+      value: 
+      objectReference: {fileID: 1503064880}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: dialogs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -738,7 +742,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1117114071600500736, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
@@ -904,6 +909,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: volumeGlitch
+      value: 
+      objectReference: {fileID: 1503064880}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: dialogs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -924,7 +933,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1117114071600500736, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
