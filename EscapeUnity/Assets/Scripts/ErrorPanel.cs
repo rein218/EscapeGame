@@ -12,9 +12,16 @@ public class ErrorPanel : MonoBehaviour
     [SerializeField] float typingSpeed = 0.1f;
     [SerializeField] int cycleDialogsEnd = 2;
     private int cycleDialogCounter = -1;
+    
 
     [SerializeField] AudioClip[] soundError, soundTyping;
     [SerializeField] Volume volumeGlitch;
+
+    [Header("костыль")]
+    [SerializeField] private bool isNeeded = false;
+    [SerializeField] private int eventDialogNumber = 5;
+    [SerializeField] private GameObject hat1;
+    [SerializeField] private GameObject hat2;
     private Coroutine typingCoroutine;
 
 
@@ -28,7 +35,7 @@ public class ErrorPanel : MonoBehaviour
             Debug.Log("dialogs.Length - cycleDialogsEnd < 0");
         }
 
-        if (isDialog) 
+        if (isDialog)
         {
             ChangeDialog();
             if (typingCoroutine != null)
@@ -36,8 +43,18 @@ public class ErrorPanel : MonoBehaviour
                 StopCoroutine(typingCoroutine);
             }
             typingCoroutine = StartCoroutine(TypingText(dialogs[cycleDialogCounter]));
+
+            if (isNeeded)
+            {
+                if (eventDialogNumber == cycleDialogCounter)
+                {
+                    PlayerPrefs.SetInt("Hat", 1);
+                    hat1.SetActive(false);
+                    hat2.SetActive(true);
+                }
+            }
         }
-        else 
+        else
         {
             textError.text = dialogs[0];
         }

@@ -674,6 +674,96 @@ Transform:
   - {fileID: 308209883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &371589914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371589916}
+  - component: {fileID: 371589915}
+  m_Layer: 0
+  m_Name: BigBoy (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &371589915
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371589914}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: fd205bba7b2c1934aa4da481f78c3782, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &371589916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371589914}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 0.73, z: 0}
+  m_LocalScale: {x: 0.12995107, y: 0.09009058, z: 0.1990425}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 894948590}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410011363
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +773,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 410011364}
+  - component: {fileID: 410011365}
+  - component: {fileID: 410011366}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -711,6 +803,34 @@ Transform:
   - {fileID: 44146380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410011365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410011363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a5cc87db481d04a9785bac2d74098d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckIfLocked
+  naming: Hat
+  gm: {fileID: 993164203}
+--- !u!114 &410011366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410011363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a5cc87db481d04a9785bac2d74098d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckIfLocked
+  naming: Hat
+  gm: {fileID: 8848547060373223245}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 404318076866600504, guid: ee8f29b776ea425788e37ebd3030955c, type: 3}
@@ -952,7 +1072,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2624270709108342435, guid: 96781fc95c136af489690ffa8f809696, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 371589916}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96781fc95c136af489690ffa8f809696, type: 3}
 --- !u!114 &894948589 stripped
@@ -1556,7 +1679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160264276947990388, guid: 0a2c7950d53e23b4eb12cc5f7e4e9edc, type: 3}
       propertyPath: levelName
-      value: Level1
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7522977176719266549, guid: 0a2c7950d53e23b4eb12cc5f7e4e9edc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1674,15 +1797,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546092287543836960, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: m_Name
-      value: ObjectErrorForSounds
+      value: ObjectDIalog
       objectReference: {fileID: 0}
     - target: {fileID: 7546092287543836960, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: hat1
+      value: 
+      objectReference: {fileID: 240741079}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: hat2
+      value: 
+      objectReference: {fileID: 371589914}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: isDialog
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: isNeeded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: typingSpeed
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: volumeGlitch
@@ -1690,32 +1829,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: cycleDialogsEnd
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
-      propertyPath: dialogs.Array.size
+      propertyPath: eventDialogNumber
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: 'dialogs.Array.data[0]'
-      value: hi
+      value: Yes, it's me.
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: 'dialogs.Array.data[1]'
-      value: yes
+      value: I told you that the game was unfinished.
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: 'dialogs.Array.data[2]'
-      value: dsadsasdsdad
+      value: Do you want a hat?
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: 'dialogs.Array.data[3]'
-      value: ddadadadad
+      value: 'Alright, you can keep the hat. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: 'dialogs.Array.data[4]'
+      value: I hope you are happy now.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: 'dialogs.Array.data[5]'
+      value: But you have to go.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: 'dialogs.Array.data[6]'
+      value: Visit me sometimes. Maybe one day it will be finished.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: 'dialogs.Array.data[7]'
+      value: Thanks for playing!
       objectReference: {fileID: 0}
     - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: soundTyping.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8479393880875018369, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
+      propertyPath: 'soundTyping.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ea6fd787f2d017db59de3e3bb9e70984, type: 3}
     - target: {fileID: 8633071946190046581, guid: 0c7f3b8221122b9b6b1a003e66e668c1, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2064,6 +2227,11 @@ PrefabInstance:
 --- !u!4 &8848547060373223244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3087888389030231326, guid: 08f57a9bda5a118fa86a920f94a39779, type: 3}
+  m_PrefabInstance: {fileID: 8848547060373223243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8848547060373223245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 88529475223646163, guid: 08f57a9bda5a118fa86a920f94a39779, type: 3}
   m_PrefabInstance: {fileID: 8848547060373223243}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

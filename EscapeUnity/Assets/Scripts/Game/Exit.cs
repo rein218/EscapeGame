@@ -20,6 +20,7 @@ public class Exit : MonoBehaviour
         yield return new WaitForSeconds(sec);
         PauseManager.Instance.Resume();
         yield return null;
+        PlayerPrefs.SetInt(levelName, 1);
         SceneManager.LoadScene(levelName);
     }
 }
